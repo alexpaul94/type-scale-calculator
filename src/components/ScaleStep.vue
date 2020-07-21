@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="step__css">
-      <pre><code><span class="selector">.scale-step-{{ stepNumber }}</span> { <span class="rule">font-size: <span class="value">{{ step.remAdjustedFontSize }}</span></span>; <span class="rule">line-height: <span class="value">{{ step.remAdjustedLineHeight }}</span></span>; }</code></pre>
+      <pre><code><span class="selector">.scale-step-{{ stepNumber }}</span> { <br class="mobile-only"><span class="rule">font-size: <span class="value">{{ step.remAdjustedFontSize }}</span></span>; <br class="mobile-only"><span class="rule">line-height: <span class="value">{{ step.remAdjustedLineHeight }}</span></span>; <br class="mobile-only">}</code></pre>
     </div>
   </div>
 </template>
@@ -77,9 +77,21 @@ export default {
     }
     .rule {
       color: seagreen;
+
+      @media screen and (max-width: 600px) {
+        margin-left: 20px;
+      }
     }
     .value {
       color: rgba(var(--accent-color), 1);
+    }
+
+    .mobile-only {
+      display: none;
+
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
     }
   }
 }
