@@ -7,7 +7,7 @@
         alt="Typeculator - typescale generator"
       >
       <p class="about__body">
-        Typeculator is a simple typescale calculator based on the "Golden Thread" technique. I got inspired to build this after reading <a
+        Typeculator is a simple type scale calculator based on the "Golden Thread" technique. I got inspired to build this after reading <a
           href="https://medium.com/design-ibm/a-deep-dive-on-typescales-16c7b1473d83"
           title="Medium article about typescales"
           target="_blank"

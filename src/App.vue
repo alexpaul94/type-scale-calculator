@@ -66,7 +66,7 @@ export default {
           name: 'base',
           label: 'Base size',
           info:
-            'This is the base value from witch the scale will be calculated. A value between 12 — 16 could be a good starting point for a typescale for screen design.',
+            'This is the base value from which the scale will be calculated. A value between 12 — 16 could be a good starting point for a type scale for screen design.',
           value: 16
         },
         scaling: {
@@ -80,14 +80,14 @@ export default {
           name: 'steps',
           label: 'Scale steps',
           info:
-            'This is the number of steps your scale will have. For screen design you could start with 4 — 6 steps and adjust as needed.',
+            'This is the number of steps your scale will have. For screen design, you could start with 4 — 6 steps and adjust as needed.',
           value: 6
         },
         lhOffset: {
           name: 'lhOffset',
           label: 'Line height offset',
           info:
-            'This is the value that controls your scale line height. A greater number will result in a taller line height for eache of your scale steps.',
+            'This is the value that controls your scale line-height. A greater number will result in a taller line-height for each of your scale steps.',
           value: 1
         }
       },
