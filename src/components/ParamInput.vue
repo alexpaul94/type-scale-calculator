@@ -6,6 +6,7 @@
     >{{ label }}</label>
     <div class="param__control">
       <button
+        :disabled="value <= 0 ? true : false"
         class="param__spinner"
         @click="value--"
       ><svg
@@ -26,6 +27,9 @@
       <input
         class="param__input"
         type="number"
+        min="1"
+        max="999999999"
+        step="1"
         v-model.number="value"
         :name="name"
         :id="name"

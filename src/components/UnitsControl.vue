@@ -22,6 +22,7 @@
       v-if=" currentUnit==='rem'"
     >
       <button
+        :disabled="currentRem <= 0 ? true : false"
         class="units-control__spinner"
         @click="currentRem--"
       ><svg
@@ -42,6 +43,9 @@
       <input
         class="units-control__input"
         type="number"
+        min="1"
+        max="999999999"
+        step="1"
         v-model.number="currentRem"
       >
       <button

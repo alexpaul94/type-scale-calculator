@@ -22,12 +22,11 @@
     />
 
     <div class="steps">
-      <div
-        class="steps__error"
-        v-if="isNaN(scaleParams.base.value) || isNaN(scaleParams.scaling.value) || isNaN(scaleParams.steps.value) || isNaN(scaleParams.lhOffset.value)"
-      >
-        Error
-      </div>
+      <Error
+        v-if="isEmpty"
+        errTitle="Couldn't generate scale"
+        errMessage="Please make sure you fill in all parameters of the scale"
+      />
       <ScaleStep
         v-else
         v-for="(step, index) in generated.slice().reverse()"
@@ -46,6 +45,7 @@
 import ParamInput from './components/ParamInput.vue'
 import ScaleStep from './components/ScaleStep.vue'
 import UnitsControl from './components/UnitsControl.vue'
+import Error from './components/Error.vue'
 
 export default {
   name: 'App',
@@ -53,7 +53,8 @@ export default {
     // TheHeader,
     ParamInput,
     ScaleStep,
-    UnitsControl
+    UnitsControl,
+    Error
   },
   data() {
     return {
@@ -142,6 +143,17 @@ export default {
       }
     }
   },
+  computed: {
+    isEmpty() {
+      return (
+        isNaN(this.scaleParams.base.value) ||
+        isNaN(this.scaleParams.scaling.value) ||
+        isNaN(this.scaleParams.steps.value) ||
+        isNaN(this.scaleParams.lhOffset.value) ||
+        this.rem <= 0
+      )
+    }
+  },
   mounted() {
     this.generateScale()
   }
@@ -227,5 +239,9 @@ input,
 button {
   font-family: inherit;
   font-size: inherit;
+}
+
+button:disabled {
+  opacity: 0.2;
 }
 </style>
