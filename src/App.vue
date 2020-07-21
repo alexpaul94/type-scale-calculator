@@ -37,6 +37,8 @@
         :stepNumber="generated.length - index"
       />
     </div>
+
+    <About />
   </div>
 </template>
 
@@ -46,15 +48,16 @@ import ParamInput from './components/ParamInput.vue'
 import ScaleStep from './components/ScaleStep.vue'
 import UnitsControl from './components/UnitsControl.vue'
 import Error from './components/Error.vue'
+import About from './components/About.vue'
 
 export default {
   name: 'App',
   components: {
-    // TheHeader,
     ParamInput,
     ScaleStep,
     UnitsControl,
-    Error
+    Error,
+    About
   },
   data() {
     return {
@@ -170,7 +173,7 @@ export default {
   box-sizing: border-box;
 }
 
-#app {
+:root {
   // Fonts
   --ui-font: 'Inter';
   --sample-sans-font: 'DM Sans';
@@ -189,7 +192,25 @@ export default {
   // Effects
   --box-shadow: 0px 16px 32px rgba(var(--contrast-color), 0.1);
   --rounding: 4px;
+}
 
+body::-webkit-scrollbar {
+  width: 16px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-color), 1);
+}
+body::-webkit-scrollbar-track {
+  background: rgba(var(--contrast-color), 0.05);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  background-color: rgba(var(--accent-color), 1);
+  border: 4px solid rgba(var(--primary-color), 1);
+}
+
+#app {
   font-family: var(--ui-font), Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -217,6 +238,32 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--primary-color), 0.3);
+  }
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    // background: rgba(var(--contrast-color), 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: rgba(var(--primary-color), 0.3);
+    border: 4px solid rgba(var(--accent-color), 1);
+  }
+}
+
+.units {
+  margin-left: var(--sidebar-width);
+  padding: var(--spacing);
+  padding-bottom: 0;
+
+  @media screen and (max-width: 900px) {
+    margin: 0;
+    padding: var(--spacing-xs);
+    padding-bottom: 0;
   }
 }
 
@@ -227,6 +274,18 @@ export default {
   @media screen and (max-width: 900px) {
     margin-left: 0;
     padding: var(--spacing-xs);
+  }
+}
+
+.about {
+  margin-left: var(--sidebar-width);
+  padding: var(--spacing);
+  padding-top: 0;
+
+  @media screen and (max-width: 900px) {
+    margin: 0;
+    padding: var(--spacing-xs);
+    padding-top: 0;
   }
 }
 

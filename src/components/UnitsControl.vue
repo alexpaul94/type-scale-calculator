@@ -1,69 +1,71 @@
 <template>
-  <div class="units-control">
-    <button
-      class="units-toggle"
-      @click="togglePxRem()"
-    >
-      <span
-        class="units-toggle__value"
-        :class="{'active': currentUnit === 'px'}"
-      >Px</span>
-      <span
-        class="units-toggle__value"
-        :class="{'active': currentUnit === 'rem'}"
-      >Rem</span>
-    </button>
-    <span
-      class="units-control__rem"
-      v-if="currentUnit==='rem'"
-    >1 rem = <strong>{{ currentRem }}</strong> px</span>
-    <div
-      class="units-control__rem-value"
-      v-if=" currentUnit==='rem'"
-    >
+  <div class="units">
+    <div class="units-control">
       <button
-        :disabled="currentRem <= 0 ? true : false"
-        class="units-control__spinner"
-        @click="currentRem--"
-      ><svg
-          width="8"
-          height="2"
-          viewBox="0 0 8 2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
+        class="units-toggle"
+        @click="togglePxRem()"
+      >
+        <span
+          class="units-toggle__value"
+          :class="{'active': currentUnit === 'px'}"
+        >Px</span>
+        <span
+          class="units-toggle__value"
+          :class="{'active': currentUnit === 'rem'}"
+        >Rem</span>
+      </button>
+      <span
+        class="units-control__rem"
+        v-if="currentUnit==='rem'"
+      >1 rem = <strong>{{ currentRem }}</strong> px</span>
+      <div
+        class="units-control__rem-value"
+        v-if=" currentUnit==='rem'"
+      >
+        <button
+          :disabled="currentRem <= 0 ? true : false"
+          class="units-control__spinner"
+          @click="currentRem--"
+        ><svg
             width="8"
             height="2"
-            rx="1"
-            fill="rgb(var(--accent-color))"
-          />
-        </svg>
-      </button>
-      <input
-        class="units-control__input"
-        type="number"
-        min="1"
-        max="999999999"
-        step="1"
-        v-model.number="currentRem"
-      >
-      <button
-        class="units-control__spinner"
-        @click="currentRem++"
-      ><svg
-          width="8"
-          height="8"
-          viewBox="0 0 8 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 8 2"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="8"
+              height="2"
+              rx="1"
+              fill="rgb(var(--accent-color))"
+            />
+          </svg>
+        </button>
+        <input
+          class="units-control__input"
+          type="number"
+          min="1"
+          max="999999999"
+          step="1"
+          v-model.number="currentRem"
         >
-          <path
-            d="M3 7C3 7.55228 3.44769 8 4 8C4.55231 8 5 7.55228 5 7V5H7C7.55231 5 8 4.55228 8 4C8 3.44772 7.55231 3 7 3H5V1C5 0.447723 4.55231 0 4 0C3.44769 0 3 0.447723 3 1V3H1C0.447693 3 0 3.44772 0 4C0 4.55228 0.447693 5 1 5H3V7Z"
-            fill="rgb(var(--accent-color))"
-          />
-        </svg>
-      </button>
+        <button
+          class="units-control__spinner"
+          @click="currentRem++"
+        ><svg
+            width="8"
+            height="8"
+            viewBox="0 0 8 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 7C3 7.55228 3.44769 8 4 8C4.55231 8 5 7.55228 5 7V5H7C7.55231 5 8 4.55228 8 4C8 3.44772 7.55231 3 7 3H5V1C5 0.447723 4.55231 0 4 0C3.44769 0 3 0.447723 3 1V3H1C0.447693 3 0 3.44772 0 4C0 4.55228 0.447693 5 1 5H3V7Z"
+              fill="rgb(var(--accent-color))"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -111,27 +113,17 @@ export default {
 
 <style lang="scss" scoped>
 .units-control {
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  margin-left: calc(var(--sidebar-width) + var(--spacing));
-  margin-top: var(--spacing);
+  overflow: hidden;
   border-radius: var(--rounding);
   background-color: rgba(var(--primary-color), 1);
   box-shadow: var(--box-shadow);
   padding: var(--spacing-s);
-  overflow: hidden;
 
   @media screen and (max-width: 900px) {
     display: block;
-    margin-left: var(--spacing-xs);
-    margin-right: var(--spacing-xs);
-  }
-
-  & > * {
-    background-color: transparent;
-    border: none;
-    width: 100%;
+    text-align: center;
   }
 
   &__rem {
@@ -201,12 +193,14 @@ export default {
 
 .units-toggle {
   padding: 0;
+  border: none;
   outline: none;
   border-radius: var(--rounding);
   background-color: rgba(var(--accent-color), 0.1);
 
   @media screen and (max-width: 900px) {
     display: flex;
+    width: 100%;
   }
 
   &__value {
