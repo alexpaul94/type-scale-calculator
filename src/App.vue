@@ -43,6 +43,7 @@
     <a
       href="https://www.producthunt.com/posts/typeculator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-typeculator"
       target="_blank"
+      rel="noreferrer"
       class="ph-badge"
     ><img
         src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=221736&theme=light"
