@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <aside class="about">
     <div class="about__content">
       <img
         class="about__logo"
@@ -10,6 +10,7 @@
         Typeculator is a simple type scale calculator based on the "Golden Thread" technique. I got inspired to build this after reading <a
           href="https://medium.com/design-ibm/a-deep-dive-on-typescales-16c7b1473d83"
           title="Medium article about typescales"
+          rel="noreferrer"
           target="_blank"
         >this article</a> where the technique is explained.
       </p>
@@ -18,32 +19,37 @@
         <a
           href="https://github.com/alexpaul94/type-scale-calculator"
           title="Typeculator Github page"
+          rel="noreferrer"
           target="_blank"
         >Github</a>
         <a
           href="https://dribbble.com/AlexPaul"
           title="Alex Paul's Dribbble profile"
+          rel="noreferrer"
           target="_blank"
         >Dribbble</a>
         <a
           href="https://www.instagram.com/alexpaul.me/"
           title="Alex Paul's Instagram profile"
+          rel="noreferrer"
           target="_blank"
         >Instagram</a>
         <a
           href="https://twitter.com/alexpaul_design"
           title="Alex Paul's Twitter profile"
+          rel="noreferrer"
           target="_blank"
         >Twitter</a>
         <a
           href="https://alexpaul.me"
           title="Alex Paul's website"
+          rel="noreferrer"
           target="_blank"
         >Website</a>
       </p>
 
     </div>
-  </div>
+  </aside>
 </template>
 
 <script>

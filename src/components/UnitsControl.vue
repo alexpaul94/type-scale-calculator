@@ -1,5 +1,5 @@
 <template>
-  <div class="units">
+  <nav class="units">
     <div class="units-control">
       <button
         class="units-toggle"
@@ -25,6 +25,7 @@
         <button
           :disabled="currentRem <= 0 ? true : false"
           class="units-control__spinner"
+          aria-label="Decrease the pixel value of a rem unit by one"
           @click="currentRem--"
         ><svg
             width="8"
@@ -47,10 +48,12 @@
           min="1"
           max="999999999"
           step="1"
+          aria-label="Input the vale of a rem unit in pixels"
           v-model.number="currentRem"
         >
         <button
           class="units-control__spinner"
+          aria-label="Increase the pixel value of a rem unit by one"
           @click="currentRem++"
         ><svg
             width="8"
@@ -67,7 +70,7 @@
         </button>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

@@ -8,6 +8,7 @@
       <button
         :disabled="value <= 0 ? true : false"
         class="param__spinner"
+        :aria-label="`Decrease ${label.toLowerCase()} by one`"
         @click="value--"
       ><svg
           width="8"
@@ -37,6 +38,7 @@
       <button
         class="param__spinner"
         @click="value++"
+        :aria-label="`Increase ${label.toLowerCase()} by one`"
       ><svg
           width="8"
           height="8"
@@ -108,7 +110,7 @@ export default {
   }
 
   &__input {
-    width: 100%;
+    min-width: 0;
     height: 40px;
     margin: 0 var(--spacing-s);
     background-color: rgba(var(--primary-color), 0);

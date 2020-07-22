@@ -73,10 +73,10 @@ export default {
     border-radius: var(--rounding);
 
     .selector {
-      color: tomato;
+      color: #ae1c00;
     }
     .rule {
-      color: seagreen;
+      color: #ae0060;
 
       @media screen and (max-width: 600px) {
         margin-left: 20px;

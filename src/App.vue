@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <TheHeader /> -->
 
-    <div class="params">
+    <nav class="params">
       <ParamInput
         v-for="(param, index) in scaleParams"
         :key="index"
@@ -12,7 +12,7 @@
         :info="param.info"
         @update:value="param.value = parseInt($event)"
       />
-    </div>
+    </nav>
 
     <UnitsControl
       :rem="rem"
@@ -21,7 +21,7 @@
       @update:rem="rem = $event"
     />
 
-    <div class="steps">
+    <main class="steps">
       <Error
         v-if="isEmpty"
         errTitle="Couldn't generate scale"
@@ -36,7 +36,7 @@
         :baseLineHeight="generated[0].lineHeight"
         :stepNumber="generated.length - index"
       />
-    </div>
+    </main>
 
     <About />
   </div>
