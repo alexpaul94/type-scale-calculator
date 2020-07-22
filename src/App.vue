@@ -39,6 +39,18 @@
     </main>
 
     <About />
+
+    <a
+      href="https://www.producthunt.com/posts/typeculator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-typeculator"
+      target="_blank"
+      class="ph-badge"
+    ><img
+        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=221736&theme=light"
+        alt="Typeculator - A different approach to generating type scales | Product Hunt Embed"
+        style="width: 250px; height: 54px;"
+        width="250px"
+        height="54px"
+      /></a>
   </div>
 </template>
 
@@ -285,6 +297,23 @@ body::-webkit-scrollbar-thumb {
   @media screen and (max-width: 900px) {
     margin: 0;
     padding: var(--spacing-xs);
+    padding-top: 0;
+  }
+}
+
+.ph-badge {
+  display: inline-block;
+  z-index: 1000;
+  position: fixed;
+  top: var(--spacing-s);
+  right: var(--spacing-s);
+  line-height: 0;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    text-align: center;
+    position: static;
+    padding: var(--spacing);
     padding-top: 0;
   }
 }
