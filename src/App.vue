@@ -271,7 +271,7 @@ body::-webkit-scrollbar-thumb {
   &::-webkit-scrollbar {
     width: 16px;
   }
-  &::-webkit-scrollbar-track {git 
+  &::-webkit-scrollbar-track {
     // background: rgba(var(--contrast-color), 0);
   }
   &::-webkit-scrollbar-thumb {
