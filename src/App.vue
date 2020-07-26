@@ -40,13 +40,26 @@
 
     <About />
 
-    <a
+    <!-- <a
       class="ph-badge"
       href="https://www.producthunt.com/posts/typeculator?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-typeculator"
       target="_blank"
       rel="noreferrer"
     ><img
         src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=221736&theme=light&period=daily"
+        alt="Typeculator - A different approach to generating type scales | Product Hunt Embed"
+        style="width: 250px; height: 54px;"
+        width="250px"
+        height="54px"
+      /></a> -->
+
+    <a
+      class="ph-badge"
+      href="https://www.producthunt.com/posts/typeculator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-typeculator"
+      target="_blank"
+      rel="noreferrer"
+    ><img
+        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=221736&theme=light"
         alt="Typeculator - A different approach to generating type scales | Product Hunt Embed"
         style="width: 250px; height: 54px;"
         width="250px"
@@ -258,7 +271,7 @@ body::-webkit-scrollbar-thumb {
   &::-webkit-scrollbar {
     width: 16px;
   }
-  &::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {git 
     // background: rgba(var(--contrast-color), 0);
   }
   &::-webkit-scrollbar-thumb {
