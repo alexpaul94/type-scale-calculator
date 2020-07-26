@@ -41,12 +41,12 @@
     <About />
 
     <a
-      href="https://www.producthunt.com/posts/typeculator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-typeculator"
+      class="ph-badge"
+      href="https://www.producthunt.com/posts/typeculator?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-typeculator"
       target="_blank"
       rel="noreferrer"
-      class="ph-badge"
     ><img
-        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=221736&theme=light"
+        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=221736&theme=light&period=daily"
         alt="Typeculator - A different approach to generating type scales | Product Hunt Embed"
         style="width: 250px; height: 54px;"
         width="250px"
@@ -70,7 +70,7 @@ export default {
     ScaleStep,
     UnitsControl,
     Error,
-    About
+    About,
   },
   data() {
     return {
@@ -80,33 +80,33 @@ export default {
           label: 'Base size',
           info:
             'This is the base value from which the scale will be calculated. A value between 12 — 16 could be a good starting point for a type scale for screen design.',
-          value: 16
+          value: 16,
         },
         scaling: {
           name: 'scaling',
           label: 'Scaling factor',
           info:
             'This number controls the growth of your scale. A greater number will result in a bigger jump between the steps of your scale.',
-          value: 3
+          value: 3,
         },
         steps: {
           name: 'steps',
           label: 'Scale steps',
           info:
             'This is the number of steps your scale will have. For screen design, you could start with 4 — 6 steps and adjust as needed.',
-          value: 6
+          value: 6,
         },
         lhOffset: {
           name: 'lhOffset',
           label: 'Line height offset',
           info:
             'This is the value that controls your scale line-height. A greater number will result in a taller line-height for each of your scale steps.',
-          value: 1
-        }
+          value: 1,
+        },
       },
       rem: 16,
       unit: 'px',
-      generated: []
+      generated: [],
     }
   },
   methods: {
@@ -132,32 +132,32 @@ export default {
           remAdjustedLineHeight:
             this.unit === 'px'
               ? lineHeight + this.unit
-              : lineHeight / this.rem + this.unit
+              : lineHeight / this.rem + this.unit,
         }
 
         this.generated.push(step)
 
         prevSize = size
       }
-    }
+    },
   },
   watch: {
     scaleParams: {
       deep: true,
       handler() {
         this.generateScale()
-      }
+      },
     },
     rem: {
       handler() {
         this.generateScale()
-      }
+      },
     },
     unit: {
       handler() {
         this.generateScale()
-      }
-    }
+      },
+    },
   },
   computed: {
     isEmpty() {
@@ -168,11 +168,11 @@ export default {
         isNaN(this.scaleParams.lhOffset.value) ||
         this.rem <= 0
       )
-    }
+    },
   },
   mounted() {
     this.generateScale()
-  }
+  },
 }
 </script>
 

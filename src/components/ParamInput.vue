@@ -64,20 +64,20 @@ export default {
     name: String,
     label: String,
     info: String,
-    defaultValue: Number
+    defaultValue: Number,
   },
   data() {
     return {
-      value: this.defaultValue
+      value: this.defaultValue,
     }
   },
   watch: {
     value: {
       handler(value) {
         this.$emit('update:value', value)
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 
@@ -110,6 +110,7 @@ export default {
   }
 
   &__input {
+    flex: 1;
     min-width: 0;
     height: 40px;
     margin: 0 var(--spacing-s);
