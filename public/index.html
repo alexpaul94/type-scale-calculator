@@ -30,7 +30,12 @@
   <meta name="msapplication-TileImage" content="<%= BASE_URL %>favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <title><%= htmlWebpackPlugin.options.title %> | An different type scale generator</title>
+  <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %> - An different type scale generator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= htmlWebpackPlugin.options.title %>" />
+  <meta property="og:image" content="<%= htmlWebpackPlugin.options.title %>/og-images/typeculator.jpg" />
+
+  <title><%= htmlWebpackPlugin.options.title %> - An different type scale generator</title>
 </head>
 
 <body>
