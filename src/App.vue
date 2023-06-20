@@ -190,7 +190,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans&family=DM+Serif+Display&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&family=Roboto+Slab:wght@700&display=swap');
 
 *,
 *::before,
@@ -201,10 +201,10 @@ export default {
 
 :root {
   // Fonts
-  --ui-font: 'Inter';
-  --sample-sans-font: 'DM Sans';
-  --sample-serif-font: 'DM Serif Display';
-  --code-font: 'DM Mono';
+  --ui-font: 'Roboto';
+  --sample-sans-font: 'Roboto';
+  --sample-serif-font: 'Roboto Slab';
+  --code-font: 'Roboto Mono';
   // Colors
   --primary-color: 255, 255, 255;
   --contrast-color: 24, 41, 82;
